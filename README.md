@@ -26,10 +26,14 @@ kraken - advanced script, currently one of the best ones.
 
 Load the script directly into your executor. Strong ones recommended for best experience.
 
+---
+
 ## Configuration & Keybinds
 Default Keybind: Press **K** to toggle the UI interface. You can rebind this under the Settings tab.
 
 Profiles: Configurations auto-save to kraken_configs/kraken_default.json in your executor's workspace folder.
+
+---
 
 ## Disclaimer
 These script is created for educational and private use only. Usage of automation tools in Roblox games carries inherent risks. Use responsibly.
