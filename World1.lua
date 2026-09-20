@@ -1263,15 +1263,6 @@ WorldTab:Toggle({
     end
 })
 
-WorldTab:Toggle({
-    Title = "Auto Collect Fruits",
-    Desc = "Collects nearby fruits automatically.",
-    Value = _G_CONFIG.AutoFruit,
-    Callback = function(Value)
-        _G_CONFIG.AutoFruit = Value
-    end
-})
-
 WorldTab:Section({ Title = "Teleport", TextXAlignment = "Left" })
 
 WorldTab:Button({
@@ -1781,16 +1772,30 @@ InfoTab:Section({ Title = "kraken Information", TextXAlignment = "Left" })
 
 InfoTab:Paragraph({
     Title = "Version",
-    Desc = "kraken v3.0.0\nWorld 2 support added.\nFixes applied to some features.\nRebranding\nMore coming soon."
+    Desc = "kraken v3.0.0\nWorld 2 support added.\nFixes applied to some features."
 })
 
 InfoTab:Paragraph({
-    Title = "Community & Support",
-    Desc = "Author: @krow511"
+    Title = "Credits",
+    Desc = "Creator: @krow511"
 })
 
 -- TAB 8: kraken+
 local PlusTab = Window:Tab({ Title = "kraken+ (199 Robux)", Icon = "badge-plus" })
+
+PlusTab:Section({ Title  "Collection", TextXAligment = "Left" })
+
+PlusTab:Toggle({
+    Title = "Auto Collect Fruits",
+    Desc = "Collects nearby fruits automatically.",
+    Value = _G_CONFIG.AutoFruit,
+    Locked = true,
+    LockedTitle = "kraken+ Required",
+    LockReason = "kraken+ Required",
+    Callback = function(Value)
+        _G_CONFIG.AutoFruit = Value
+    end
+})
 
 PlusTab:Section({ Title = "Prestige Thresholds", TextXAlignment = "Left" })
 
