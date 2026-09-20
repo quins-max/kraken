@@ -1783,7 +1783,7 @@ InfoTab:Paragraph({
 -- TAB 8: kraken+
 local PlusTab = Window:Tab({ Title = "kraken+ (199 Robux)", Icon = "badge-plus" })
 
-PlusTab:Section({ Title = "Collection", TextXAligment = "Left" })
+PlusTab:Section({ Title = "Collection", TextXAlignment = "Left" })
 
 PlusTab:Toggle({
     Title = "Auto Collect Fruits",
