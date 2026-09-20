@@ -1217,52 +1217,6 @@ AutomationTab:Button({
     end
 })
 
-AutomationTab:Section({ Title = "Prestige Thresholds", TextXAlignment = "Left" })
-
-AutomationTab:Input({
-    Title = "Auto Rebirth Delay",
-    Desc = "Cooldown between successful rebirths.",
-    Value = tostring(_G_CONFIG.AutoRebirthDelay),
-    Placeholder = "0.2",
-    Callback = function(Text)
-        local num = tonumber(Text)
-        if num then _G_CONFIG.AutoRebirthDelay = num end
-    end
-})
-
-AutomationTab:Input({
-    Title = "Stop Rebirth At Investors",
-    Desc = "Stop rebirth if investors exceed set limit (0 = infinite)",
-    Value = tostring(_G_CONFIG.StopRebirthAt),
-    Placeholder = "0",
-    Callback = function(Text)
-        local num = parseNumber(Text)
-        if num then _G_CONFIG.StopRebirthAt = num end
-    end
-})
-
-AutomationTab:Input({
-    Title = "Auto Evolve Delay",
-    Desc = "Seconds between evolve loops.",
-    Value = tostring(_G_CONFIG.AutoEvolveDelay),
-    Placeholder = "0.2",
-    Callback = function(Text)
-        local num = tonumber(Text)
-        if num then _G_CONFIG.AutoEvolveDelay = num end
-    end
-})
-
-AutomationTab:Input({
-    Title = "Stop Evolve At Level",
-    Desc = "Target evolution ceiling.",
-    Value = tostring(_G_CONFIG.StopEvolveAt),
-    Placeholder = "0",
-    Callback = function(Text)
-        local num = parseNumber(Text)
-        if num then _G_CONFIG.StopEvolveAt = num end
-    end
-})
-
 AutomationTab:Section({ Title = "Economy Auxiliaries", TextXAlignment = "Left" })
 
 local PhoneOffersToggle = AutomationTab:Toggle({
@@ -1836,8 +1790,65 @@ InfoTab:Paragraph({
 })
 
 -- TAB 8: kraken+
-local PlusTab = Window:Tab({ Title = "kraken+", Icon = "badge-plus" })
+local PlusTab = Window:Tab({ Title = "kraken+ (199 Robux)", Icon = "badge-plus" })
 
+PlusTab:Section({ Title = "Prestige Thresholds", TextXAlignment = "Left" })
+
+PlusTab:Input({
+    Title = "Auto Rebirth Delay",
+    Desc = "Cooldown between rebirths.",
+    Value = tostring(_G_CONFIG.AutoRebirthDelay),
+    Placeholder = "0.2",
+    Locked = true,
+    LockedTitle = "kraken+ Required",
+    LockReason = "kraken+ Required",
+    Callback = function(Text)
+        local num = tonumber(Text)
+        if num then _G_CONFIG.AutoRebirthDelay = num end
+    end
+})
+
+PlusTab:Input({
+    Title = "Stop Rebirth At Investors",
+    Desc = "Stop rebirth if investors exceed set limit (0 = infinite)",
+    Value = tostring(_G_CONFIG.StopRebirthAt),
+    Placeholder = "0",
+    Locked = true,
+    LockedTitle = "kraken+ Required",
+    LockReason = "kraken+ Required",
+    Callback = function(Text)
+        local num = parseNumber(Text)
+        if num then _G_CONFIG.StopRebirthAt = num end
+    end
+})
+
+PlusTab:Input({
+    Title = "Auto Evolve Delay",
+    Desc = "Seconds between evolve loops.",
+    Value = tostring(_G_CONFIG.AutoEvolveDelay),
+    Placeholder = "0.2",
+    Locked = true,
+    LockedTitle = "kraken+ Required",
+    LockReason = "kraken+ Required",
+    Callback = function(Text)
+        local num = tonumber(Text)
+        if num then _G_CONFIG.AutoEvolveDelay = num end
+    end
+})
+
+PlusTab:Input({
+    Title = "Stop Evolve At Level",
+    Desc = "Target evolution ceiling.",
+    Value = tostring(_G_CONFIG.StopEvolveAt),
+    Placeholder = "0",
+    Locked = true,
+    LockedTitle = "kraken+ Required",
+    LockReason = "kraken+ Required",
+    Callback = function(Text)
+        local num = parseNumber(Text)
+        if num then _G_CONFIG.StopEvolveAt = num end
+    end
+})
 
 -- Bootstrapper
 task.spawn(function()
