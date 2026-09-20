@@ -1835,6 +1835,10 @@ InfoTab:Paragraph({
     Desc = "Author: @krow511"
 })
 
+-- TAB 8: kraken+
+local PlusTab = Window:Tab({ Title = "kraken+", Icon = "badge-plus" })
+
+
 -- Bootstrapper
 task.spawn(function()
     task.wait(0.5)
